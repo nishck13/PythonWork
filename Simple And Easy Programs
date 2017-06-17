@@ -1,0 +1,60 @@
+    #1. Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
+num =input("enter the no.")
+if int(num)%2 ==0:
+    print ("even")
+else:
+    print ("odd")
+    
+    
+    #2. Print both Odd and Even Numbers inside the Lis
+print("even") 
+for x in list:
+    if x%2 == 0:
+        print("%s" %(x))
+print( "odd")    
+for x in list:
+    if x%2 == 1:
+        print("%s" %(x))
+        
+    
+    #3. Print less than 10 unique numbers inside the list 
+     #List = [2,4,5,9,10,2,18,4,5,20]
+     #Result: 2,4,5,9
+uniq = set(List2)
+for x in uniq:
+    if (x<10):
+        print(x)
+        
+    
+    #4. Take two lists, say for example these two:
+     #a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+     #b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+     #write a program that returns a list that contains only the elements that are common between the lists (without duplicates). 
+     #Make sure your program works on two lists of different sizes. 
+d= set(a)
+e= set(b)
+c=[]
+for x in d:
+    for y in e:
+        if x==y:
+            c.append(y)
+print(c)
+
+    
+    #5. Ask user to input a string and verify whether the string is Palindrome or not.
+str1 =input("Enter a string \t")
+if str1[:]==str1[::-1]:
+    print ("string is palindrome")
+else:
+    print ("string is not palindrome")
+    
+
+    #6. Write a program that accepts number input and prints a list of all divisors of that number.
+num13=input("Enter no. here")
+div=1
+divisor=[]
+while div<=int(num13):
+    if int(num13)%div == 0:
+        divisor.append(div)
+    div += 1
+print(divisor)
