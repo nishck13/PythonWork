@@ -1,0 +1,85 @@
+#IMPLEMENT THE FOLLOWING IN A CLASS
+  #*SEARCH A GIVEN WORD IN THE FILE
+  #*PRINT WORDS WHOS LENGTH IS GREATER THEN 20
+  #*PROGRAM TO PRINT ONLY WORD NOT HAVING "E"
+
+class Implementation(object):
+    file = open("word.txt")
+    word=""
+    def searchword(self):
+        #SEARCH A GIVEN WORD IN THE FILE
+        self.wrd=input("Enter a word to Search in File: ")
+        self.file.seek(0)
+        self.word=""
+        self.c=1
+        for self.x in self.file.read():
+            if self.x!=' ':
+                self.word+=self.x
+                if self.wrd==self.word:
+                    self.c=0
+            else:
+                self.word=""
+        if self.c==0:
+            print("i got it dude")
+        else:
+            print("i dont get it")
+    def lengr(self):
+        #PRINT WORDS WHOS LENGTH IS GREATER THEN 20
+        self.file.seek(0)
+        self.word=""
+        self.c=1
+        for self.x in self.file.read():
+            if self.x!=' ':
+                self.word+=self.x
+            else:
+                self.num=len(self.word)
+                if self.num>20:
+                    print(self.word+" ")
+                self.word=""
+    def check1(self,str):
+            self.c=1
+            for self.y in str:
+                if self.y=='e':
+                    self.c=0
+            if self.c!=0:
+                print(str)
+    def wrdwoe(self):
+        #PROGRAM TO PRINT ONLY WORD NOT HAVING "E"
+        self.file.seek(0)
+        self.word=""
+        for self.x in self.file.read():
+            if self.x!=' ':
+                self.word+=self.x
+            else:
+                self.check1(self.word)
+                self.word=""
+    def check2(self,str):
+            self.c=1
+            global num
+            for self.y in str:
+                if self.y=='e'or self.y=='i'or self.y=='o'or self.y=='u'or self.y=='a':
+                    self.c=0
+            if self.c!=0:
+                self.num+=1
+    def countwrdwithoutvowel(self):
+        #count word without vowels
+        self.file.seek(0)
+        self.word=""
+        self.num=0
+        for self.x in self.file.read():
+            if self.x!=' ':
+                self.word+=self.x
+            else:
+                self.check2(self.word)
+                self.word=""
+        print(self.num)
+
+obj = Implementation()
+print("\n\nExecuting count no. of words without vowel in a file")
+obj.countwrdwithoutvowel()
+print("\n\nExecuting search word in a file")
+obj.searchword()
+print("\n\nExecuting print word with length > 20")
+obj.lengr()
+print("\n\nExecuting print word without having E")
+obj.wrdwoe()
