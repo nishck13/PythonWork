@@ -1,0 +1,22 @@
+s=0
+import random
+p=random.randrange(0,1000)
+print("Random No. =", p)
+while True:
+    g=input(print("Enter H for higher and L for Lower guess"))
+    n=random.randrange(0,1000)
+    print("New Random:",n)
+    if g=='H' or g=='h':
+        if n<p:
+            print("Game Lost, Your score is:", s)
+            break
+        else:
+            p=n
+            s+=1
+    elif g=='L' or g=='l':
+        if n>p:
+            print("Game Lost, Your score is:", s)
+            break
+        else:
+            s+=1
+            p=n
